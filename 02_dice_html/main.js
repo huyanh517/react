@@ -12,6 +12,6 @@ const images = [
 ]
 
 button.addEventListener("click", () => {
-  img1.src = images[Math.floor(Math.random(0) * (images.length - 1))]
-  img2.src = images[Math.floor(Math.random(0) * (images.length - 1))]
+  img1.src = images[Math.floor(Math.random() * images.length)]
+  img2.src = images[Math.floor(Math.random() * images.length)]
 })
