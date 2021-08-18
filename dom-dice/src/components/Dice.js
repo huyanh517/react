@@ -35,8 +35,16 @@ export const Dice = () => {
     <div className="container">
       <div className="logo"><img src="/images/diceeLogo@2x.png" alt="" /></div>
       <div className="list-dice">
-        <img className="dice-1" src={isClicked ? firstImgSrc : IMAGES[0]} alt="" />
-        <img id="dice-2" src={isClicked ? secondImgSrc : IMAGES[3]} alt="" />
+        <img
+          className="dice-1"
+          src={isClicked ? firstImgSrc : IMAGES[Math.floor(Math.random() * (IMAGES.length))]}
+          alt=""
+        />
+        <img
+          id="dice-2"
+          src={isClicked ? secondImgSrc : IMAGES[Math.floor(Math.random() * (IMAGES.length))]}
+          alt=""
+        />
       </div>
       <button
         onClick={clickButtonHandler}
