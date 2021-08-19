@@ -1,10 +1,11 @@
 import React from 'react'
+import { Button } from '../../shared/Button/Button'
 
 export const Title = () => {
   return (
     <div className="main-title spacing d-flex tcl-jc-between tcl-ais-center">
       <h2>News List</h2>
-      <a href="/#" className="btn btn-default">View More</a>
+      <Button type="default" value="View more" />
     </div>
   )
 }

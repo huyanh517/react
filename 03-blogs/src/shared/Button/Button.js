@@ -1,8 +1,11 @@
 import React from 'react'
 
-export const Button = ({ icon, value, className }) => {
+export const Button = ({ icon, value, type, size, onClick }) => {
   return (
-    <button className={`btn ${className}`} icon={null}>
+    <button
+      className={`btn btn-${type} btn-size-${size}`}
+      onClick={onClick}
+    >
       {icon}
       {value}
     </button>

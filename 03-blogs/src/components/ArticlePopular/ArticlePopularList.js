@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../../shared/Button/Button'
 
 export const ArticlePopularList = () => {
   return (
@@ -18,8 +19,12 @@ export const ArticlePopularList = () => {
               </div>
               <div className="article-item__content">
                 <ul className="article-item__categories">
-                  <li><a href="/#" className="btn btn-category">News</a></li>
-                  <li><a href="/#" className="btn btn-category">News</a></li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
                 </ul>
                 <ul className="article-item__stats">
                   <li>
@@ -55,7 +60,7 @@ export const ArticlePopularList = () => {
                         <svg
                           stroke="currentColor"
                           fill="currentColor"
-                          stroke-width="0"
+                          strokeWidth="0"
                           viewBox="0 0 512 512"
                           className="css-uk6cul"
                           height="1em"
@@ -95,8 +100,12 @@ export const ArticlePopularList = () => {
                   </li>
                 </ul>
                 <ul className="article-item__categories">
-                  <li><a href="/#" className="btn btn-category">News</a></li>
-                  <li><a href="/#" className="btn btn-category">News</a></li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
                 </ul>
                 <h2 className="article-item__title">
                   <a href="/post-detail.html"
@@ -126,7 +135,7 @@ export const ArticlePopularList = () => {
                         <svg
                           stroke="currentColor"
                           fill="currentColor"
-                          stroke-width="0"
+                          strokeWidth="0"
                           viewBox="0 0 512 512"
                           className="css-uk6cul"
                           height="1em"
@@ -169,8 +178,12 @@ export const ArticlePopularList = () => {
                   </li>
                 </ul>
                 <ul className="article-item__categories">
-                  <li><a href="/#" className="btn btn-category">News</a></li>
-                  <li><a href="/#" className="btn btn-category">News</a></li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
+                  <li>
+                    <Button type="category" value="News" />
+                  </li>
                 </ul>
                 <h2 className="article-item__title">
                   <a href="/post-detail.html"
@@ -200,7 +213,7 @@ export const ArticlePopularList = () => {
                         <svg
                           stroke="currentColor"
                           fill="currentColor"
-                          stroke-width="0"
+                          strokeWidth="0"
                           viewBox="0 0 512 512"
                           className="css-uk6cul"
                           height="1em"

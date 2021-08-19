@@ -5,25 +5,27 @@ import { ArticleNewList } from './ArticleNewList'
 import { Title } from './Title'
 
 export const ArticleNew = () => {
+  const clickHandler = () => {
+    console.log("Test")
+  }
+
   return (
     <div className="articles-list section">
       <div className="tcl-container">
-        {/* <!-- Main Title --> */}
         <Title />
-        {/* <!-- End Main Title --> */}
-
-        {/* <!-- End Row News List --> */}
+        
         <div className="tcl-row">
           <ArticleNewList />
         </div>
-        {/* <!-- End Row News List --> */}
-
-        {/* <!-- Btn Loadmore --> */}
+     
         <div className="text-center">
           <Button
-            className="btn-primary btn-size-large"
+            type="primary"
+            size="large"
             value="Load more"
-            icon={<IconLoading />} />
+            icon={<IconLoading />}
+            onClick={clickHandler}
+          />
         </div>
       </div>
     </div>
