@@ -11,35 +11,35 @@ export const ArticleItem = (
     isStyleRow
   }) => {
 
-  const buttonEle   = <ul className="article-item__categories">
-                        <li>
-                          <Button type="category" value="News" />
-                        </li>
-                        <li>
-                          <Button type="category" value="News" />
-                        </li>                      
-                      </ul>
+  const buttonEle     =  <ul className="article-item__categories">
+                            <li>
+                              <Button type="category" value="News" />
+                            </li>
+                            <li>
+                              <Button type="category" value="News" />
+                            </li>                      
+                          </ul>
 
-  const iconEle   = <ul className="article-item__stats">
-                      <li>
-                        <i className="icons ion-ios-eye"></i>
-                        <span className="text">Views</span>
-                      </li>
-                    </ul>
+  const iconEle        =  <ul className="article-item__stats">
+                            <li>
+                              <i className="icons ion-ios-eye"></i>
+                              <span className="text">Views</span>
+                            </li>
+                          </ul>
 
-  const avatarEle  = <div className="article-item__author-image">
-                        <a aria-label="John Doe" href="/#">
-                          <img
-                            src="assets/images/john-doe.png"
-                            alt="john-doe"
-                          />
-                        </a>
-                      </div>
+  const avatarEle       = <div className="article-item__author-image">
+                            <a aria-label="John Doe" href="/#">
+                              <img
+                                src="assets/images/john-doe.png"
+                                alt="john-doe"
+                              />
+                            </a>
+                          </div>
   
-  const descriptionEle  = <p className="article-item__desc">
-                              Markdown is a lightweight markup language with
-                              plain-text-formatting syntax. Its design allows it to…
-                          </p>
+  const descriptionEle  =   <p className="article-item__desc">
+                                Markdown is a lightweight markup language with
+                                plain-text-formatting syntax. Its design allows it to…
+                            </p>
 
   return (
     <article
