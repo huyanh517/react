@@ -15,7 +15,7 @@ function App() {
       {/* <DemoButton /> */}
       {/* <DemoMainTitle /> */}
       {/* <DemoInput /> */}
-      <DemoArticleItem />
+      {/* <DemoArticleItem /> */}
       
       <HomePage />
 
