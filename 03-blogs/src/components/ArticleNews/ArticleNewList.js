@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArticleItem } from '../../shared/ArticleItem/ArticleItem'
+import { ArticleItem } from '../ArticleItem/ArticleItem'
 
 export const ArticleNewList = () => {
   return (

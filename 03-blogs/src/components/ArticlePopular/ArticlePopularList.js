@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArticleItem } from '../../shared/ArticleItem/ArticleItem'
+import { ArticleItem } from '../ArticleItem/ArticleItem'
 import { Button } from '../../shared/Button/Button'
 
 export const ArticlePopularList = () => {
