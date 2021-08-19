@@ -1,4 +1,5 @@
 import React from 'react'
+import './latest-news-list.css'
 import { ArticleItem } from '../ArticleItem/ArticleItem'
 
 export const ArticleLatestList = () => {
@@ -6,38 +7,20 @@ export const ArticleLatestList = () => {
     <div className="latest-news__list spacing">
       <div className="latest-news__card">
         <ArticleItem
-          isShowButton={false}
-          isShowAvatar={true}
-          isShowDescription={false}
-          isShowIcon={false}
-          isStyleCard={false}
-          isStyleRow={false}
+          isShowAuthorImg
         />
-        
       </div>
 
       <div className="latest-news__card">
         <ArticleItem
-          isShowButton={false}
-          isShowAvatar={true}
-          isShowDescription={false}
-          isShowIcon={false}
-          isStyleCard={false}
-          isStyleRow={false}
+          isShowAuthorImg
         />
-        
       </div>
 
       <div className="latest-news__card">
         <ArticleItem
-          isShowButton={false}
-          isShowAvatar={true}
-          isShowDescription={false}
-          isShowIcon={false}
-          isStyleCard={false}
-          isStyleRow={false}
+          isShowAuthorImg
         />
-        
       </div>
 
     </div>

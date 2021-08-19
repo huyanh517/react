@@ -1,5 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import './search.css'
 import { Input } from '../../../shared/Input/Input'
+import { IconSearch } from '../../../shared/Input/IconSearch';
 
 export const Search = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -13,16 +15,13 @@ export const Search = () => {
     <div className="tcl-col-4">
       {/* <!-- Header Search --> */}
       <form action="/search.html" method="get">
-        <div className="header-search">
-          <Input
-            type="text"
-            placeHolder="Search articles here ..."
-            ariaLabel="Search"
-            isShowIcon={true}
-            isShowHidePassword={false}
-            onChange={inputChangeHandler}
-          />
-        </div>
+        <Input
+          type='search'
+          placeholder='Search articles here...'
+          onChange={inputChangeHandler}
+          className="hello"
+          Icon={<IconSearch />}
+        />
       </form>
     </div>
   )

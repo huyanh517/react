@@ -1,6 +1,5 @@
 import React from 'react'
 import { ArticleItem } from '../ArticleItem/ArticleItem'
-import { Button } from '../../shared/Button/Button'
 
 export const ArticlePopularList = () => {
   return (
@@ -9,23 +8,21 @@ export const ArticlePopularList = () => {
         <div className="popular-news__list--row">
           <div className="popular-news__list--card">
             <ArticleItem
-              isShowIcon={true}
-              isShowDescription={true}
-              isShowButton={true}
-              isShowAvatar={true}
-              isStyleRow={false}
-              isStyleCard={true}
+              isShowAuthorImg
+              isShowCategories
+              isShowDescription
+              isShowStats
+              isStyleCard
             />
           </div>
 
           <div className="popular-news__list--card">
             <ArticleItem
-              isShowIcon={true}
-              isShowDescription={true}
-              isShowButton={true}
-              isShowAvatar={true}
-              isStyleRow={false}
-              isStyleCard={true}
+              isShowAuthorImg
+              isShowCategories
+              isShowDescription
+              isShowStats
+              isStyleCard
             />
           </div>
 
@@ -35,12 +32,12 @@ export const ArticlePopularList = () => {
         <div className="popular-news__list--row">
           <div className="popular-news__list--card">
             <ArticleItem
-              isShowIcon={true}
-              isShowDescription={true}
-              isShowButton={true}
-              isShowAvatar={true}
-              isStyleRow={true}
-              isStyleCard={true}
+              isShowAuthorImg
+              isShowCategories
+              isShowDescription
+              isShowStats
+              isStyleCard
+              isStyleRow
             />
           </div>
 

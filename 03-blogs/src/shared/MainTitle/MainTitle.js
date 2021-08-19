@@ -1,11 +1,23 @@
 import React from 'react'
+import './main-title.css'
 import { Button } from '../Button/Button'
+import classNames from 'classnames';
 
-export const MainTitle = ({ value, isShowButton }) => {
+export const MainTitle = (
+  { children,
+    className,
+    btnLabel,
+    btnProps = {}
+  }) => {
+  
+  const classes = classNames('main-title spacing', {
+    'd-flex tcl-jc-between tcl-ais-center': btnLabel
+  }, className) 
+  
   return (
-    <div className="main-title spacing d-flex tcl-jc-between tcl-ais-center">
-      <h2>{value}</h2>
-      {isShowButton ? <Button type="default" value="View more" /> : null}
+    <div className={classes}>
+        <h2>{children}</h2>
+        {btnLabel && <Button {...btnProps}>{btnLabel}</Button>}
     </div>
   )
 }

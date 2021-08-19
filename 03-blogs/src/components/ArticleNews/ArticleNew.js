@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button } from '../../shared/Button/Button'
-import { IconLoading } from '../../shared/Button/IconLoading'
+import { MainTitle } from '../../shared/MainTitle/MainTitle'
 import { ArticleNewList } from './ArticleNewList'
-import { Title } from './Title'
+
 
 export const ArticleNew = () => {
   const clickHandler = () => {
@@ -12,7 +12,7 @@ export const ArticleNew = () => {
   return (
     <div className="articles-list section">
       <div className="tcl-container">
-        <Title />
+        <MainTitle btnLabel="View More" >New Articles</MainTitle>
         
         <div className="tcl-row">
           <ArticleNewList />
@@ -22,10 +22,11 @@ export const ArticleNew = () => {
           <Button
             type="primary"
             size="large"
-            value="Load more"
-            icon={<IconLoading />}
+            Loading
             onClick={clickHandler}
-          />
+          >
+            Loading
+          </Button>
         </div>
       </div>
     </div>

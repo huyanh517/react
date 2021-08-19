@@ -6,69 +6,41 @@ export const ArticleNewList = () => {
     <>
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
 
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
 
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
 
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
 
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
 
       <div className="tcl-col-12 tcl-col-md-6">
         <ArticleItem
-          isShowAvatar={false}
-          isShowButton={false}
-          isShowIcon={false}
-          isShowDescription={false}
-          isStyleCard={true}
-          isStyleRow={false}
+          isStyleCard 
         />
       </div>
+
+      
       
     </>
   )

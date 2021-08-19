@@ -1,12 +1,13 @@
 import React from 'react'
+import { MainTitle } from '../../shared/MainTitle/MainTitle'
 import { ArticleLatestList } from './ArticleLatestList'
-import { Title } from './Title'
+
 
 export const ArticleLatest = () => {
   return (
     <div className="latest-news section">
       <div className="tcl-container">
-        <Title />
+        <MainTitle className="custom">Latest Articles</MainTitle>
         <ArticleLatestList />
       </div>
     </div>

@@ -1,39 +1,67 @@
+import classNames from 'classnames';
 import React, { useState } from 'react'
-import { InputIcon } from './InputIcon'
+import { IconSearch } from './IconSearch';
+import "./input.css"
 
 export const Input = (
   {
-    type,
-    placeHolder,
+    label,
+    type = "text",
     ariaLabel,
-    onChange,
-    isShowIcon,
-    isShowHidePassword
+    className,
+    Icon = <IconSearch />,
+    ...restProps
   }) => {
 
-  const [passwordShow, setPasswordShow] = useState(false);
+  const [localType, setLocalType] = useState(type)
+  // const [classIcon, setClassIcon] = useState('ion-eye')
 
-  const togglePasswordHandler = () => {
-    setPasswordShow(passwordShow ? false : true);
-  };
+  const passwordToggleHandler = () => {
+    if (localType === 'password') {
+      setLocalType("text")
+      // setClassIcon("ion-eye")
+    } else if (localType === 'text') {
+      setLocalType('password')
+      // setClassIcon("ion-eye-disabled")
+    }
+  }
+
+  const classIcon = classNames('toggle-password', {
+    'ion-eye': localType === 'password' ,
+    'ion-eye-disabled': localType === 'text'
+  })
+
+  const classSearch = classNames('input-search__input', className)
+
+  if (type === 'search') {
+    return (
+      <div className="input-search">
+        {Icon}
+        <input
+          className={classSearch}
+          type={localType}
+          name="query"
+          {...restProps}       
+        />
+      </div>
+    )
+  }
 
   return (
-    <>
-      {isShowIcon ? <InputIcon /> : null}
-      <input
-        className="header-search__input"
-        type={isShowHidePassword ? (passwordShow ? "text" : "password") : type}
-        placeholder={placeHolder}
-        aria-label={ariaLabel}
-        onChange={onChange}
-      />
-      {isShowHidePassword ?
+    <div className="form-control">
+      {label && <label for="">{label}</label>}
+      {
+        type === "password" &&
         <i
-          class="toggle-password ion-eye"
-          onClick={togglePasswordHandler}
-          style={{cursor: "pointer"}}
-        >
-        </i> : null}
-    </>
+          className={classIcon}
+          onClick={passwordToggleHandler}>
+        </i>
+      }
+      <input
+        type={localType}
+        {...restProps}
+        className={className}
+      />
+    </div>
   )
 }
