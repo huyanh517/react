@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../../shared/Button/Button'
+import { IconLoading } from '../../shared/Button/IconLoading'
 import { ArticleNewList } from './ArticleNewList'
 import { Title } from './Title'
 
@@ -19,7 +20,10 @@ export const ArticleNew = () => {
 
         {/* <!-- Btn Loadmore --> */}
         <div className="text-center">
-          <Button />
+          <Button
+            className="btn-primary btn-size-large"
+            value="Load more"
+            icon={<IconLoading />} />
         </div>
       </div>
     </div>

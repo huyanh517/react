@@ -1,6 +1,7 @@
 import React from 'react'
-import { Title } from '../ArticleLatest/Title'
+
 import { ArticlePopularList } from './ArticlePopularList'
+import { Title } from './Title';
 
 export const ArticlePopular = () => {
   return (
