@@ -1,11 +1,8 @@
 import React from 'react'
-import { Button } from '../../shared/Button/Button'
+import { MainTitle } from './../../shared/MainTitle/MainTitle';
 
 export const Title = () => {
   return (
-    <div className="main-title spacing d-flex tcl-jc-between tcl-ais-center">
-      <h2>Popular Articles</h2>
-      <Button type="default" value="View more" />
-    </div>
+    <MainTitle value="Popular Articles" isShowButton={true} />
   )
 }
