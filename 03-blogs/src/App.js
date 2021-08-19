@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage/HomePage';
 import { DemoButton } from './demo/DemoButton';
 import { DemoMainTitle } from './demo/DemoMainTitle';
 import { DemoInput } from './demo/DemoInput';
+import { DemoArticleItem } from './demo/DemoArticleItem';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <DemoButton /> */}
       {/* <DemoMainTitle /> */}
       {/* <DemoInput /> */}
-
+      <DemoArticleItem />
+      
       <HomePage />
 
       <div className="spacing"></div>
