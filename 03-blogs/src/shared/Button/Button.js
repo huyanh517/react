@@ -7,8 +7,8 @@ export const Button = (
   {
     type = "default",
     size,
-    Loading,
-    LoadingPos = "left",
+    loading,
+    loadingPos = "left",
     htmlType,
     as,
     className,
@@ -17,19 +17,19 @@ export const Button = (
   }) => {
     
   const classes = classNames("btn", {
-    "btn-default": (type === "default" || type === ""),
+    "btn-default": (type === "default"),
     "btn-primary": (type === "primary"),
     "btn-category": (type === "category"),
     "btn-size-large": size === "large",
     "btn-size-medium": size === "medium",
-    "btn-size-small": (size === "small" || size === "")
+    "btn-size-small": (size === "small")
   }, className)
 
   const content = (
     <>
-      {Loading && (LoadingPos === "left" || LoadingPos === "") && <IconLoading />}
+      {loading && (loadingPos === "left") && <IconLoading />}
       {children}
-      {Loading && LoadingPos === "right" && <IconLoading />}
+      {loading && loadingPos === "right" && <IconLoading />}
     </>
   )
 

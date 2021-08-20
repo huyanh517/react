@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './search.css'
 import { Input } from '../../../shared/Input/Input'
-import { IconSearch } from '../../../shared/Input/IconSearch';
+import { IconSearch } from '../../../shared/IconSearch';
 
 export const Search = () => {
   const [searchValue, setSearchValue] = useState("");

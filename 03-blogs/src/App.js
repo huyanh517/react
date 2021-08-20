@@ -12,7 +12,7 @@ function App() {
     <div className="wrapper-content">
       <Header />
 
-      {/* <DemoButton /> */}
+      <DemoButton />
       {/* <DemoMainTitle /> */}
       {/* <DemoInput /> */}
       {/* <DemoArticleItem /> */}

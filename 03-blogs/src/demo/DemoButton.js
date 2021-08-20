@@ -13,8 +13,8 @@ export const DemoButton = () => {
         htmlType="submit"
         size="large"
         onClick={clickHandler}
-        Loading
-        LoadingPos=""
+        loading
+        loadingPos=""
         className="custom"
         hehe="hi"
       >

@@ -22,7 +22,7 @@ export const ArticleNew = () => {
           <Button
             type="primary"
             size="large"
-            Loading
+            loading
             onClick={clickHandler}
           >
             Loading

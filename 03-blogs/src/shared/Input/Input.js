@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useState } from 'react'
-import { IconSearch } from './IconSearch';
+import { IconSearch } from '../IconSearch';
 import "./input.css"
 
 export const Input = (
