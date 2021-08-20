@@ -9,7 +9,7 @@ export const Input = (
     type = "text",
     ariaLabel,
     className,
-    Icon = <IconSearch />,
+    icon = <IconSearch />,
     ...restProps
   }) => {
 
@@ -36,7 +36,7 @@ export const Input = (
   if (type === 'search') {
     return (
       <div className="input-search">
-        {Icon}
+        {icon}
         <input
           className={classSearch}
           type={localType}

@@ -20,7 +20,7 @@ export const Search = () => {
           placeholder='Search articles here...'
           onChange={inputChangeHandler}
           className="hello"
-          Icon={<IconSearch />}
+          icon={<IconSearch />}
         />
       </form>
     </div>
