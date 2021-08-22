@@ -18,7 +18,7 @@ export const BudgetExpenses = () => {
   }  
 
   const itemExpense = itemExpenses.map(item => (
-    <div className="item clearfix" ket={item.id}>
+    <div className="item clearfix" key={item.id}>
       <div className="item__description">{item.name}</div>
       <div className="right clearfix">
         <div className="item__value">- {item.price}</div>
