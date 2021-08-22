@@ -10,7 +10,7 @@ export const BudgetIncome = () => {
 
   const itemIncomes = _.filter(items, item => item.sign === 'inc')
 
-  const handleClick = (id) => {
+  const handleClick = id => {
     dispatch(actDeleteItem(id))
   }
 
