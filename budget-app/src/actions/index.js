@@ -3,13 +3,13 @@ import * as types from '../constants/ActionTypes'
 export const actSubmitForm = (item) => {
   return {
     type: types.SUBMIT_FORM,
-    item
+    payload: item
   }
 }
 
-export const actDeleteItem = (id) => {
+export const actDeleteBudget = id => {
   return {
-    type: types.DELETE_ITEM,
-    id
+    type: types.DELETE_BUDGET,
+    payload: id
   }
 }

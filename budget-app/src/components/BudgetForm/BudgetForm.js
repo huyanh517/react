@@ -7,84 +7,98 @@ export const BudgetForm = () => {
 
   const dispatch = useDispatch()
 
-  const [newItem, setNewItem] = useState({
+  const [formData, setFormData] = useState({
     id: '',
+    sign: '+',
     name: '',
-    sign: '',
-    price: 0
+    price: ''
   })
+
 
   const handleChange = event => {
     const target = event.target
-    const value = target.value
+    let value = target.value
     const name = target.name
 
-    setNewItem({
-      ...newItem,
+    if (name === 'price' && value !== '') {
+      value = Number(value)
+    }
+
+    if (value < 0) {
+      return
+    }
+
+    setFormData({
+      ...formData,
       [name]: value
     })
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    let item = {
-      id: newItem.id,
-      name: newItem.name,
-      sign: newItem.sign,
-      price: newItem.price
+    if (!formData.name || !formData.price) {
+      return
     }
-    dispatch(actSubmitForm(item))
+    // let item = {
+    //   id: formData.id,
+    //   name: formData.name,
+    //   sign: formData.sign,
+    //   price: formData.price
+    // }
+    dispatch(actSubmitForm(formData))
+
+    setFormData({
+      id: '',
+      sign: '+',
+      name: '',
+      price: ''
+    })
   }
 
-  const classSign = classNames('add__type', {
-    'red-focus': newItem.sign === 'exp',
-  })
-
-  const classDesc = classNames('add__description', {
-    'red-focus': newItem.sign === 'exp',
-  })
-
-  const classPrice = classNames('add__value', {
-    'red-focus': newItem.sign === 'exp',
-  })
+  const isShowRed = formData.sign === '-'
 
   return (
-    <>
-      {/* <!-- Trường hợp chọn dấu - --> */}
-      <div className="add">
-        <div className="add__container">
-          <form onSubmit={handleSubmit}>
-            <select
-              className={classSign}
-              name="sign"
-              onChange={handleChange}
-            >
-              <option value="">Sign</option>
-              <option value="inc">+</option>
-              <option value="exp">-</option>
-            </select>
-            <input
-              type="text"
-              name="name"
-              className={classDesc}
-              placeholder="Add description"
-              onChange={handleChange}
-            />
-            <input
-              type="number"
-              name="price"
-              min="0"
-              className={classPrice}
-              placeholder="Value"
-              onChange={handleChange}
-            />
-            <button className="add__btn red">
-              <i className="ion-ios-checkmark-outline"></i>
-            </button>
-
-          </form>
-        </div>
+    <div className="add">
+      <div className="add__container">
+        <form onSubmit={handleSubmit}>
+          <select
+            className={classNames('add__type', {
+              'red-focus': isShowRed
+            })}
+            value={formData.sign}
+            onChange={handleChange}
+            name='sign'
+          >
+            <option value="+">+</option>
+            <option value="-">-</option>
+          </select>
+          <input
+            type="text"
+            className={classNames('add__description', {
+              'red-focus': isShowRed
+            })}
+            placeholder="Add description"
+            name='name'
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <input
+            type="number"
+            className={classNames('add__value', {
+              'red-focus': isShowRed
+            })}
+            placeholder="Value"
+            name='price'
+            value={formData.price}
+            onChange={handleChange}
+          />
+          <button className={classNames('add__btn', {
+            'red': isShowRed
+          })}>
+            <i className="ion-ios-checkmark-outline"></i>
+          </button>
+        </form>
       </div>
-    </>
+    </div>
   )
 }
