@@ -2,10 +2,9 @@ export const calTotalPriceInCart = listData => {
   let sum = 0
   for (let i = 0; i < listData.length; i++) {
     let data = listData[i].price
-    let quantity = listData[i].quantity
-    quantity = Number(quantity)
+    let quantity = listData[i].quantity  
     sum += data * quantity
-    sum = Number(sum)
+    
   }
   return sum
 }
