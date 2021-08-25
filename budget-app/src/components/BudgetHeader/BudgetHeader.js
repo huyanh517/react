@@ -1,26 +1,17 @@
 import React from 'react'
-
-import { useSelector } from 'react-redux'
-import { calTotalPrice } from '../../helper'
 import { BudgetHeaderRemain } from './BudgetHeaderRemain';
 import { BudgetHeaderIncome } from './BudgetHeaderIncome';
 import { BudgetHeaderExpenses } from './BudgetHeaderExpenses';
-import { calRatio } from './../../helper';
+import { useBudgetData } from './../../hooks/useBudgetData';
 
 export const BudgetHeader = () => {
-  const listData = useSelector(state => state.items)
-
-  const listDataIncome = listData.filter(item => item.price > 0)
-
-  const listDataExpenses = listData.filter(item => item.price < 0)
-
-  const totalPriceIncome = calTotalPrice(listDataIncome)
-
-  const totalPriceExpenses = calTotalPrice(listDataExpenses)
-
-  const totalRemain = totalPriceIncome - totalPriceExpenses
-
-  const ratio = calRatio(totalPriceExpenses, totalPriceIncome)
+  
+  const {
+    totalRemain,
+    totalPriceIncome,
+    totalPriceExpenses,
+    ratio
+  } = useBudgetData()
 
   return (
     <div className="top">
