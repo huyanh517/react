@@ -9,14 +9,12 @@ export const Footer = () => {
           <div className="tcl-row">
             {/* <!-- Footer Column --> */}
             <div className="tcl-col-12 tcl-col-sm-6 tcl-col-md-4 tcl-col-lg-3">
-              <div className="footer-logo">
-                <img src="assets/images/logo.png" alt="NuxtBlog Logo" />
-              </div>
+              
               <p>© 2020, All Rights Reserved.</p>
               <p>
                 Created by
-                <a href="/https://www.facebook.com/congluc1902" target="_blank"
-                >Luctc</a>
+                <a href="https://www.facebook.com/huyanh1598/" target="_blank"
+                >Duy Manh</a>
               </p>
             </div>
 
@@ -40,7 +38,7 @@ export const Footer = () => {
               </div>
               <ul className="footer-content__list">
                 <li>
-                  219/78 Trần Văn Đang - Quận 10 - Thành phố Hồ chí Minh
+                  219/78 Trần Văn Đang - Hà Nội
                 </li>
                 <li>0343 261 825</li>
               </ul>
@@ -51,29 +49,7 @@ export const Footer = () => {
               <div className="footer-title">
                 <p>Fanpage</p>
               </div>
-              <div className="footer-facebook">
-                <div
-                  className="fb-page"
-                  data-href="https://www.facebook.com/HocLapTrinhWebTrenProjectsThucTe/"
-                  data-tabs=""
-                  data-width=""
-                  data-height=""
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true"
-                >
-                  <blockquote
-                    cite="https://www.facebook.com/HocLapTrinhWebTrenProjectsThucTe/"
-                    className="fb-xfbml-parse-ignore"
-                  >
-                    <a
-                      href="https://www.facebook.com/HocLapTrinhWebTrenProjectsThucTe/"
-                    >Học Lập Trình Web Thông Qua Projects Thực Tế</a
-                    >
-                  </blockquote>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

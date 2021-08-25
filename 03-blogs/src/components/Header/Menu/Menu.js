@@ -7,16 +7,16 @@ export const Menu = () => {
       {/* <!-- Nav --> */}
       <div className="header-nav">
         <ul className="header-nav__lists">
-          <li><a href="/#">Home</a></li>
           <li>
             <a href="/#">Our Team</a>
             <ul>
-              <li><a href="/#">Our Team 1</a></li>
-              <li><a href="/#">Our Team 2</a></li>
-              <li><a href="/#">Our Team 3</a></li>
+              <li><a href="/#">Ninh {'<3'} </a></li>
+              <li><a href="/#">Xơn</a></li>
+              <li><a href="/#">Duy Manh</a></li>
             </ul>
           </li>
-          <li>
+          <li><a href="/#">Login</a></li>
+          {/* <li>
             <a href="/#">Contact</a>
             <ul>
               <li><a href="/#">Contact 1</a></li>
@@ -30,12 +30,13 @@ export const Menu = () => {
                 </ul>
               </li>
             </ul>
-          </li>
+          </li> */}
         </ul>
         <ul className="header-nav__lists">
           <li className="user"><a href="login.html"><i className="icons ion-person"></i> Tài khoản</a></li>
         </ul>
       </div>
     </div>
+ 
   )
 }
