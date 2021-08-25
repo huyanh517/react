@@ -31,7 +31,8 @@ export const items = (state = initialState, action) => {
     case types.UPDATE_ITEM_CART:
       let index = getIndexItem(state, action.payload)
       if (index > -1) {
-        state[index].quantity = action.payload.quantity
+
+        state[index].quantity = action.payload.quantity 
       }
       return [...state]
 
