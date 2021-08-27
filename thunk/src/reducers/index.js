@@ -1,7 +1,8 @@
 import * as types from '../constants/index'
 
 let initialState = {
-  listUsers: []
+  listUsers: [],
+  detailUser: {}
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -10,7 +11,12 @@ export const rootReducer = (state = initialState, action) => {
       return {
         listUsers: action.payload.items
       }
-  
+
+    case types.GET_DETAIL_FROM_API:
+      return {
+        detailUser: action.payload.item
+      }
+    
     default:
       return state
   }

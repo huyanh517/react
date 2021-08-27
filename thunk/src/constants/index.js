@@ -1,1 +1,2 @@
 export const GET_DATA_FROM_API = 'GET_DATA_FROM_API'
+export const GET_DETAIL_FROM_API = 'GET_DETAIL_FROM_API'
