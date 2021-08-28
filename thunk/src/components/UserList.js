@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { actGetDetailAsync } from '../actions'
 import { IconLoading } from './IconLoading'
@@ -12,17 +13,23 @@ export const UserList = ({ users }) => {
 
   const dispatch = useDispatch();
 
+  const history = useHistory()
+
   const [loadingIdSelected, setLoadingIdSelected] = useState(0);
 
   const handleShowDetail = user => {
-    if (loadingIdSelected) {
+    if (loadingIdSelected !== 0) {
       return;
     }
 
     setLoadingIdSelected(user.id);
 
     dispatch(actGetDetailAsync(user.login))
-      .then(() => setLoadingIdSelected(0))
+      .then(() => {
+        setLoadingIdSelected(0)
+      })
+
+   
   };
 
   return (
@@ -46,13 +53,15 @@ export const UserList = ({ users }) => {
             <TD>{user.login}</TD>
             <TD>{user.type}</TD>
             <TD>
-              <a
+              <Link
                 onClick={() => handleShowDetail(user)}
-                href='/#'
-                className='btn btn-primary'>
+                className='btn btn-primary'
+                to={`/user/${user.login}`}
+              >
+                
                 {loadingIdSelected === user.id && <IconLoading width='20' />}
                 Show Details
-              </a>
+              </Link>
             </TD>
           </tr>
         ))}

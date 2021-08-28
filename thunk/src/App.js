@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Route, Switch } from 'react-router';
 import { actGetDataAsync } from './actions';
 import './App.css';
 import { IconLoading } from './components/IconLoading';
-import { UserDetail } from './components/UserDetail';
-import { UserList } from './components/UserList';
+import { UserDetailPage } from './pages/UserDetailPage';
+import { UserListPage } from './pages/UserListPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function App() {
 
   useEffect(() => {
     setLoadingUser(true)
-    
+
     dispatch(actGetDataAsync())
       .then(() => setLoadingUser(false))
   }, [dispatch])
@@ -27,12 +28,24 @@ function App() {
   return (
     <div className='container'>
       <div className='row'>
-        {
-          !userDetail ?
-          loadingUser ? <IconLoading width='80' /> : <UserList users={users} />
-          :
-          <UserDetail userDetail={userDetail} />
-        }
+        <Switch>
+          {
+            !userDetail ?
+              (
+                loadingUser ?
+
+                <IconLoading width='80' />
+                :
+                <Route path='/' exact>
+                  <UserListPage users={users} />
+                </Route> 
+              ) :
+
+              <Route path='/user/:userName'>
+                <UserDetailPage userDetail={userDetail} />
+              </Route>
+          }
+        </Switch>
       </div>
     </div>
   );
