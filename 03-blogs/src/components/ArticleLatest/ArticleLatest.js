@@ -7,7 +7,7 @@ export const ArticleLatest = () => {
   return (
     <div className="latest-news section">
       <div className="tcl-container">
-        <MainTitle className="custom">Latest Articles</MainTitle>
+        <MainTitle>Latest Articles</MainTitle>
         <ArticleLatestList />
       </div>
     </div>

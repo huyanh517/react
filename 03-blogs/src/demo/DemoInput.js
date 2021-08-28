@@ -2,7 +2,7 @@ import React from 'react'
 import { Input } from '../shared/Input/Input'
 
 export const DemoInput = () => {
-  const inputChangeHandler = (event) => {
+  const inputChangeHandler = event => {
     console.log(event.target.value)
   }
 

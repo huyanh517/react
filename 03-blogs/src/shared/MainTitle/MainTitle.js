@@ -7,10 +7,12 @@ export const MainTitle = (
   { children,
     className,
     btnLabel,
+    type = '',
     btnProps = {}
   }) => {
   
   const classes = classNames('main-title spacing', {
+    'main-title__search': type === 'search',
     'd-flex tcl-jc-between tcl-ais-center': btnLabel
   }, className) 
   

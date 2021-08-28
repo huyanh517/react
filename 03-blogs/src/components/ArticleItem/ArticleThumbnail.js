@@ -5,8 +5,8 @@ export const ArticleThumbnail = () => {
     <div className="article-item__thumbnail">
       <a href="/#">
         <img
-          src="assets/images/blog-1.jpg"
-          alt="assets/images/blog-1.jpg"
+          src="/assets/images/blog-1.jpg"
+          alt="/assets/images/blog-1.jpg"
         />
       </a>
     </div>

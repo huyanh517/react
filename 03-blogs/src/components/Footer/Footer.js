@@ -13,7 +13,7 @@ export const Footer = () => {
               <p>© 2020, All Rights Reserved.</p>
               <p>
                 Created by
-                <a href="https://www.facebook.com/huyanh1598/" target="_blank"
+                <a href="https://www.facebook.com/huyanh1598/" target="_blank" rel="noreferrer"
                 >Duy Manh</a>
               </p>
             </div>

@@ -49,7 +49,7 @@ export const Input = (
 
   return (
     <div className="form-control">
-      {label && <label for="">{label}</label>}
+      {label && <label htmlFor="">{label}</label>}
       {
         type === "password" &&
         <i
