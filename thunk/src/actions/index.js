@@ -3,7 +3,7 @@ import { UserService } from './../services/users';
 
 export const actGetData = items => {
   return {
-    type: types.GET_DATA_FROM_API,
+    type: types.FETCH_USERS,
     payload: {
       items
     }
@@ -28,7 +28,7 @@ export const actGetDataAsync = () => {
 
 export const actGetDetail = item => {
   return {
-    type: types.GET_DETAIL_FROM_API,
+    type: types.FETCH_USER_DETAIL,
     payload: {
       item
     }

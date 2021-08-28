@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { actGetDetailAsync } from '../actions'
+import { IconLoading } from './IconLoading'
 
 const TD = styled.td`
   padding-top: 20px !important;
 `
 
-export const UserList = ({users, handleShowDetail}) => {
+export const UserList = ({ users }) => {
+
+  const dispatch = useDispatch();
+
+  const [loadingIdSelected, setLoadingIdSelected] = useState(0);
+
+  const handleShowDetail = user => {
+    if (loadingIdSelected) {
+      return;
+    }
+
+    setLoadingIdSelected(user.id);
+
+    dispatch(actGetDetailAsync(user.login))
+      .then(() => setLoadingIdSelected(0))
+  };
+
   return (
     <table className="table mt-5 table-striped table-hover">
       <thead>
@@ -28,9 +47,10 @@ export const UserList = ({users, handleShowDetail}) => {
             <TD>{user.type}</TD>
             <TD>
               <a
-                onClick={() => handleShowDetail(user.login)}
+                onClick={() => handleShowDetail(user)}
                 href='/#'
                 className='btn btn-primary'>
+                {loadingIdSelected === user.id && <IconLoading width='20' />}
                 Show Details
               </a>
             </TD>
