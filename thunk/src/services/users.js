@@ -6,6 +6,10 @@ export const UserService = {
   },
 
   getDetail(userName) {
-    return api.get(`/users/${userName}`)
+    if (userName) {
+      return api.get(`/users/${userName}`)
+    } else {
+      return api.get('/')
+    }
   }
 }

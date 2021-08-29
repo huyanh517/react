@@ -14,17 +14,8 @@ export const UserDetail = ({ userDetail }) => {
 
   const dispatch = useDispatch()
 
-  const [loadingBack, setLoadingBack] = useState(false)
-
   const handleBack = () => {
-    setLoadingBack(true)
-
-    dispatch(actGetDetailAsync())
-      .then(() => {
-        dispatch(actGetDetail(null))
-        setLoadingBack(false)
-      })
-
+    dispatch(actGetDetail(null))
   }
 
   return (
@@ -52,8 +43,7 @@ export const UserDetail = ({ userDetail }) => {
               onClick={handleBack}
               to='/'
               className='btn btn-primary'>
-              {loadingBack && <IconLoading width='20' />}
-              Back
+              Back 
             </Link>
           </TD>
         </tr>

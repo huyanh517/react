@@ -18,6 +18,7 @@ export const UserList = ({ users }) => {
   const [loadingIdSelected, setLoadingIdSelected] = useState(0);
 
   const handleShowDetail = user => {
+    
     if (loadingIdSelected !== 0) {
       return;
     }
@@ -28,8 +29,6 @@ export const UserList = ({ users }) => {
       .then(() => {
         setLoadingIdSelected(0)
       })
-
-   
   };
 
   return (
@@ -44,27 +43,28 @@ export const UserList = ({ users }) => {
         </tr>
       </thead>
       <tbody>
-        {users.map(user => (
-          <tr key={user.id}>
-            <th scope="row">{user.id}</th>
-            <th>
-              <img alt='anh' src={user.avatar_url} width='50' />
-            </th>
-            <TD>{user.login}</TD>
-            <TD>{user.type}</TD>
-            <TD>
-              <Link
-                onClick={() => handleShowDetail(user)}
-                className='btn btn-primary'
-                to={`/user/${user.login}`}
-              >
-                
-                {loadingIdSelected === user.id && <IconLoading width='20' />}
-                Show Details
-              </Link>
-            </TD>
-          </tr>
-        ))}
+        {
+          users.map(user => (
+            <tr key={user.id}>
+              <th scope="row">{user.id}</th>
+              <th>
+                <img alt='anh' src={user.avatar_url} width='50' />
+              </th>
+              <TD>{user.login}</TD>
+              <TD>{user.type}</TD>
+              <TD>
+                <Link
+                  onClick={() => handleShowDetail(user)}
+                  className='btn btn-primary'
+                  to={`/user/${user.login}`}
+                >
+                  {loadingIdSelected === user.id && <IconLoading width='20' />}
+                  Show Details
+                </Link>
+              </TD>
+            </tr>
+          ))
+        }
 
       </tbody>
     </table>

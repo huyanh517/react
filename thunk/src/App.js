@@ -34,21 +34,22 @@ function App() {
               (
                 loadingUser ?
 
-                <IconLoading width='80' />
-                :
-                <Route path='/' exact>
-                  <UserListPage users={users} />
-                </Route> 
+                  <IconLoading width='80' />
+                  :
+                  <Route path='/' exact>
+                    <UserListPage users={users} />
+                  </Route>
               ) :
 
               <Route path='/user/:userName'>
                 <UserDetailPage userDetail={userDetail} />
               </Route>
+
           }
         </Switch>
       </div>
     </div>
-  );
+  )
 }
 
 export default App;
