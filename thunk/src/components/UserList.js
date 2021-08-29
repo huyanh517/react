@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
 import { actGetDetailAsync } from '../actions'
 import { IconLoading } from './IconLoading'
@@ -13,7 +13,7 @@ export const UserList = ({ users }) => {
 
   const dispatch = useDispatch();
 
-  // const history = useHistory()
+  const history = useHistory()
 
   const [loadingIdSelected, setLoadingIdSelected] = useState(0);
 
@@ -28,6 +28,7 @@ export const UserList = ({ users }) => {
     dispatch(actGetDetailAsync(user.login))
       .then(() => {
         setLoadingIdSelected(0)
+        history.push(`/user/${user.login}`)
       })
   };
 
@@ -53,14 +54,14 @@ export const UserList = ({ users }) => {
               <TD>{user.login}</TD>
               <TD>{user.type}</TD>
               <TD>
-                <Link
+                <button
                   onClick={() => handleShowDetail(user)}
                   className='btn btn-primary'
-                  to={`/user/${user.login}`}
+                  // to={`/user/${user.login}`}
                 >
                   {loadingIdSelected === user.id && <IconLoading width='20' />}
                   Show Details
-                </Link>
+                </button>
               </TD>
             </tr>
           ))

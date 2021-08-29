@@ -43,7 +43,7 @@ export const UserDetail = ({ userDetail }) => {
               onClick={handleBack}
               to='/'
               className='btn btn-primary'>
-              Back 
+              Back
             </Link>
           </TD>
         </tr>
