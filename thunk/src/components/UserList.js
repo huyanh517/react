@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { actGetDetailAsync } from '../actions'
 import { IconLoading } from './IconLoading'
@@ -13,12 +13,12 @@ export const UserList = ({ users }) => {
 
   const dispatch = useDispatch();
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const [loadingIdSelected, setLoadingIdSelected] = useState(0);
 
   const handleShowDetail = user => {
-    
+
     if (loadingIdSelected !== 0) {
       return;
     }

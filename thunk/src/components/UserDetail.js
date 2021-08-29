@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 
-import { actGetDetail, actGetDetailAsync } from '../actions/index'
-import { IconLoading } from './IconLoading';
+import { actGetDetail } from '../actions/index'
+// import { IconLoading } from './IconLoading';
 import { Link } from 'react-router-dom';
 
 const TD = styled.td`
