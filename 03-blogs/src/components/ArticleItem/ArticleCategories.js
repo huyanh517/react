@@ -1,10 +1,9 @@
 import React from 'react'
 import { useHistory } from 'react-router';
-import { Link } from 'react-router-dom';
 import { Button } from './../../shared/Button/Button';
 
 export const ArticleCategories = ({ categories }) => {
-  console.log(categories)
+  console.log('categories', categories)
 
   const history = useHistory()
 
