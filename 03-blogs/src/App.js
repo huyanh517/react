@@ -6,7 +6,7 @@ import { HomePage } from './pages/HomePage/HomePage';
 // import { DemoInput } from './demo/DemoInput';
 // import { DemoArticleItem } from './demo/DemoArticleItem';
 
-import { Switch, BrowserRouter, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { LoginPage } from './pages/Login/LoginPage';
 import { RegisterPage } from './pages/Login/RegisterPage';
 import { NotFoundPage } from './pages/ErrorPage/NotFoundPage';
@@ -16,43 +16,43 @@ import { PostDetailPage } from './pages/PostDetailPage/PostDetailPage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="wrapper-content">
-        <Header />
-        <Switch>
 
-          <Route path="/login">
-            <LoginPage />
-          </Route>
+    <div className="wrapper-content">
+      <Header />
+      <Switch>
 
-          <Route path="/register">
-            <RegisterPage />
-          </Route>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
 
-          <Route path="/" exact>
-            <HomePage />
-          </Route>
+        <Route path="/register">
+          <RegisterPage />
+        </Route>
 
-          <Route path="/search">
-            <SearchPage />
-          </Route>
+        <Route path="/" exact>
+          <HomePage />
+        </Route>
 
-          <Route path='/post/:slug'>
-            <PostDetailPage />
-          </Route>
+        <Route path="/search">
+          <SearchPage />
+        </Route>
 
-          <Route>
-            <NotFoundPage />
-          </Route>
+        <Route path='/post/:slug'>
+          <PostDetailPage />
+        </Route>
 
-        </Switch>
-        
+        <Route>
+          <NotFoundPage />
+        </Route>
 
-        <div className="spacing"></div>
+      </Switch>
 
-        <Footer />
-      </div>
-    </BrowserRouter>
+
+      <div className="spacing"></div>
+
+      <Footer />
+    </div>
+
   );
 }
 

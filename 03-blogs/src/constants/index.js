@@ -1,0 +1,1 @@
+export const FETCH_LIST_POST = 'FETCH_LIST_POST'
