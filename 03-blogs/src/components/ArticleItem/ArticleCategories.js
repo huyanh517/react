@@ -10,7 +10,7 @@ export const ArticleCategories = ({ categories }) => {
   const history = useHistory()
 
   const handleClick = category => {
-    cates.map(cate => {
+    cates.forEach(cate => {
       if (cate.id === category) {
         history.push(`/category/${cate.slug}`)
       }
