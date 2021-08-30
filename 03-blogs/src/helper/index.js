@@ -17,6 +17,13 @@ export const mappingPostData = posts => {
   }
 }
 
+export const mappingCategoryData = categories => {
+  return {
+    id: categories.id,
+    slug: categories.slug
+  }
+}
+
 export const formatDescription = string => {
   const strLength = string.length
   const formattedStr = string.substring(3, strLength - 5)

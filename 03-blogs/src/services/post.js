@@ -23,6 +23,10 @@ const PostService = {
       per_page: 3,
       page: 1
     })
+  },
+
+  getListCategories() {
+    return api.call().get('/wp/v2/categories')
   }
 }
 

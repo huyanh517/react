@@ -1,8 +1,9 @@
-import { ACT_FETCH_ARTICLE_LATEST, ACT_FETCH_ARTICLE_POPULAR } from './action';
+import { ACT_FETCH_ARTICLE_LATEST, ACT_FETCH_ARTICLE_POPULAR, ACT_FETCH_CATEGORIES } from './action';
 
 let initialState = {
   articleLatest: [],
-  articlePopular: []
+  articlePopular: [],
+  categories: []
 }
 
 const postReducer = (postState = initialState, action) => {
@@ -17,6 +18,12 @@ const postReducer = (postState = initialState, action) => {
       return {
         ...postState,
         articlePopular: action.payload.items
+      }
+    
+    case ACT_FETCH_CATEGORIES:
+      return {
+        ...postState,
+        categories: action.payload.items
       }
     
     default:

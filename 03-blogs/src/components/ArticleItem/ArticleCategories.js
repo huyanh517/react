@@ -1,18 +1,26 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { Button } from './../../shared/Button/Button';
 
 export const ArticleCategories = ({ categories }) => {
-  console.log('categories', categories)
+  
+  const cates = useSelector(state => state.Post.categories)
 
   const history = useHistory()
 
   const handleClick = category => {
-    history.push(`/category/${category}`)
+    cates.map(cate => {
+      if (cate.id === category) {
+        history.push(`/category/${cate.slug}`)
+      }
+      return -1
+    })
   }
 
   return (
     <ul className="article-item__categories">
+
       {
         categories.map((category, index) => (
           <li key={index}>
@@ -26,8 +34,6 @@ export const ArticleCategories = ({ categories }) => {
           </li>
         ))
       }
-
-
 
     </ul>
   )
