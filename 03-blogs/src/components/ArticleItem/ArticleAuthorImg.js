@@ -1,14 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { DEFAULT_AVATAR } from '../../constants'
 
-export const ArticleAuthorImg = () => {
+export const ArticleAuthorImg = ({ avatar, name, authorLink }) => {
   return (
     <div className="article-item__author-image">
-      <a aria-label="John Doe" href="/#">
+      <Link aria-label="John Doe" to={authorLink}>
         <img
-          src="/assets/images/john-doe.png"
-          alt="john-doe"
+          src={avatar || DEFAULT_AVATAR}
+          alt={name}
         />
-      </a>
+      </Link>
     </div>
   )
 }

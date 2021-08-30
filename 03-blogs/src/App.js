@@ -15,12 +15,13 @@ import { PostDetailPage } from './pages/PostDetailPage/PostDetailPage';
 
 
 function App() {
+  
   return (
 
     <div className="wrapper-content">
       <Header />
+     
       <Switch>
-
         <Route path="/login">
           <LoginPage />
         </Route>

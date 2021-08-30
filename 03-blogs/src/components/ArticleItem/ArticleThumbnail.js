@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const ArticleThumbnail = () => {
+export const ArticleThumbnail = ({ thumbnail, slugLink, title }) => {
   return (
     <div className="article-item__thumbnail">
-      <a href="/#">
+      <Link to={slugLink}>
         <img
-          src="/assets/images/blog-1.jpg"
-          alt="/assets/images/blog-1.jpg"
+          src={thumbnail}
+          alt={title}
         />
-      </a>
+      </Link>
     </div>
   )
 }

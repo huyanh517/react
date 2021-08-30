@@ -1,9 +1,12 @@
-import axios from 'axios'
+import axios from "axios"
+import { BASE_URL } from './../constants/index';
 
-const BASE_URL = 'http://localhost:8080/wp-api/wp-json/'
-
-const api = axios.create({
-  baseURL: BASE_URL
-})
+const api = {
+  call() {
+    return axios.create({
+      baseURL: BASE_URL,
+    })
+  }
+}
 
 export default api
