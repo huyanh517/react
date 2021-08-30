@@ -20,7 +20,8 @@ export const mappingPostData = posts => {
 export const mappingCategoryData = categories => {
   return {
     id: categories.id,
-    slug: categories.slug
+    slug: categories.slug,
+    name: categories.name
   }
 }
 

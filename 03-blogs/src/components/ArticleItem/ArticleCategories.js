@@ -29,7 +29,11 @@ export const ArticleCategories = ({ categories }) => {
               onClick={() => handleClick(category)}
               type='category'
             >
-              News
+              {cates.map(cate => {
+                if (cate.id === category) {
+                  return cate.name
+                }
+              })}
             </Button>
           </li>
         ))
