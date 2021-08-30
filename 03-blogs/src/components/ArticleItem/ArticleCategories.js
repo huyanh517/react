@@ -33,6 +33,7 @@ export const ArticleCategories = ({ categories }) => {
                 if (cate.id === category) {
                   return cate.name
                 }
+                return ''
               })}
             </Button>
           </li>
