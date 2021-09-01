@@ -49,7 +49,7 @@ export const RegisterPage = () => {
     if (confirmPassword.trim().length < 1) {
       confirmPasswordError.required = 'Nickname must be Required'
     } else if (confirmPassword.trim() !== password.trim()) {
-      confirmPasswordError.match = 'Must match '
+      confirmPasswordError.match = 'Must match with Password '
     }
 
     setUsernameError(usernameError)
