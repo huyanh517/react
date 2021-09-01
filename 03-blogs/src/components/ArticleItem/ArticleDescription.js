@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const ArticleDescription = ({ description }) => {
+export const ArticleDescription = ({ shortDescHTML }) => {
   return (
     <p className="article-item__desc">
-      {description}
+      {shortDescHTML}
     </p>
   )
 }

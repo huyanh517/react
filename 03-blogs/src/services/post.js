@@ -21,13 +21,21 @@ const PostService = {
   getArticlePopular() {
     return PostService.getList({
       per_page: 3,
-      page: 1
+      page: 1,
+      orderby: 'post_views'
     })
   },
 
-  getListCategories() {
-    return api.call().get('/wp/v2/categories')
+  getArticleGeneral({
+    perPage = 2,
+    currentPage = 1
+  } = {}) {
+    return PostService.getList({
+      per_page: perPage,
+      page: currentPage
+    })
   }
+
 }
 
 export default PostService

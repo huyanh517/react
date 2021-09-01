@@ -9,7 +9,8 @@ import { ArticleDescription } from './ArticleDescription'
 import { ArticleStats } from './ArticleStats'
 import { ArticleThumbnail } from './ArticleThumbnail'
 import { ArticleTitle } from './ArticleTitle'
-import { formatDescription } from './../../helper/index';
+import { formatShortDescHTML } from './../../helper/index';
+
 
 export const ArticleItem = (
   {
@@ -20,7 +21,7 @@ export const ArticleItem = (
     isStyleCard,
     isStyleRow,
     post,
-   
+
   }) => {
 
   const classes = classNames('article-item', {
@@ -32,7 +33,7 @@ export const ArticleItem = (
     return null
   }
 
-  const { title, thumbnail, author, created, slug, authorId, description, categories, viewCount } = post
+  const { title, thumbnail, author, created, slug, authorId, shortDescHTML, categories, viewCount } = post
 
   const { nickname, avatar } = author
 
@@ -55,7 +56,7 @@ export const ArticleItem = (
 
         <ArticleTitle title={title} slugLink={slugLink} />
 
-        {isShowDescription && <ArticleDescription description={formatDescription(description)} />}
+        {isShowDescription && <ArticleDescription shortDescHTML={formatShortDescHTML(shortDescHTML)} />}
 
         <div className="article-item__info">
 

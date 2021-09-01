@@ -12,10 +12,18 @@ import { RegisterPage } from './pages/Login/RegisterPage';
 import { NotFoundPage } from './pages/ErrorPage/NotFoundPage';
 import { SearchPage } from './pages/SearchPage/SearchPage';
 import { PostDetailPage } from './pages/PostDetailPage/PostDetailPage';
-
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { actFetchAllCategoriesAsync } from './store/category/action';
 
 function App() {
   
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(actFetchAllCategoriesAsync())
+  }, [dispatch])
+
   return (
 
     <div className="wrapper-content">

@@ -1,47 +1,21 @@
 import React from 'react'
 import { ArticleItem } from '../ArticleItem/ArticleItem'
 
-export const ArticleNewList = () => {
+export const ArticleNewList = ({ posts }) => {
   return (
     <>
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
 
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
+      {
+        posts.map(post => (
+          <div className="tcl-col-12 tcl-col-md-6" key={post.id}>
+            <ArticleItem
+              post={post}
+              isStyleCard
+            />
+          </div>
+        ))
+      }
 
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
-
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
-
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
-
-      <div className="tcl-col-12 tcl-col-md-6">
-        <ArticleItem
-          isStyleCard 
-        />
-      </div>
-
-      
-      
     </>
   )
 }

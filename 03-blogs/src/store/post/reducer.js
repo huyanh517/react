@@ -1,9 +1,12 @@
-import { ACT_FETCH_ARTICLE_LATEST, ACT_FETCH_ARTICLE_POPULAR, ACT_FETCH_CATEGORIES } from './action';
+import { ACT_FETCH_ARTICLE_LATEST, ACT_FETCH_ARTICLE_POPULAR, ACT_FETCH_ARTICLE_GENERAL } from './action';
 
 let initialState = {
   articleLatest: [],
   articlePopular: [],
-  categories: []
+  articlePaging: {
+    list: [],
+    currentPage: 1
+  }
 }
 
 const postReducer = (postState = initialState, action) => {
@@ -13,19 +16,30 @@ const postReducer = (postState = initialState, action) => {
         ...postState,
         articleLatest: action.payload.items
       }
-       
+
     case ACT_FETCH_ARTICLE_POPULAR:
       return {
         ...postState,
         articlePopular: action.payload.items
       }
-    
-    case ACT_FETCH_CATEGORIES:
+
+    case ACT_FETCH_ARTICLE_GENERAL:
       return {
         ...postState,
-        categories: action.payload.items
+        articlePaging: {
+          ...postState.articlePaging,
+          list: action.payload.currentPage === 1
+            ?
+            action.payload.items
+            : [
+              ...postState.articlePaging.list,
+              ...action.payload.items
+            ],
+          currentPage: action.payload.currentPage,
+          totalPages: action.payload.totalPages
+        }
       }
-    
+
     default:
       return postState
   }

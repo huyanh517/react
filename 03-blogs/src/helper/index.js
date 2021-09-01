@@ -11,25 +11,41 @@ export const mappingPostData = posts => {
     slug: posts.slug,
     authorId: posts.author,
     created: posts.date,
-    description: posts.excerpt.rendered,
+    shortDescHTML: posts.excerpt.rendered,
     categories: posts.categories,
-    viewCount: posts.view_count
+    viewCount: posts.view_count,
+    name: posts.name
   }
 }
 
-export const mappingCategoryData = categories => {
-  return {
-    id: categories.id,
-    slug: categories.slug,
-    name: categories.name
+export const formatShortDescHTML = shortDescHTML => {
+  let shortDesc = shortDescHTML
+    .replace('<p>', '')
+    .replace('</p>', '')
+  
+  let stringFormatted = shortDesc
+    .split(' ')
+    .slice(0, 20)
+    .join(' ')
+  
+  if (stringFormatted !== shortDescHTML) {
+    stringFormatted += '...'
   }
+
+  return stringFormatted
 }
 
-export const formatDescription = string => {
-  const strLength = string.length
-  const formattedStr = string.substring(3, strLength - 5)
-  if (formattedStr.length > 100) {
-    return formattedStr.substring(0, 115) + '...'
-  }
-  return formattedStr
+export const handleHashCategoryById = categories => {
+  const hashObj = { }
+
+  categories.forEach(categoryItem => {
+    const key = categoryItem.id
+    hashObj[key] = {
+      id: categoryItem.id,
+      name: categoryItem.name,
+      slug: categoryItem.slug
+    }
+  })
+
+  return hashObj
 }
